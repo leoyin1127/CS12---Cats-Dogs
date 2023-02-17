@@ -39,8 +39,8 @@ public class PlayerController : MonoBehaviour
         }
 
         // Check if the player is within the screen boundary
-        float xPos = Mathf.Clamp(transform.position.x, screenLeft, screenRight);
-        transform.position = new Vector3(xPos, transform.position.y);
+        float xPositions = Mathf.Clamp(transform.position.x, screenLeft, screenRight);
+        transform.position = new Vector3(xPositions, transform.position.y);
     }
 
     // Check if the player is on the ground
