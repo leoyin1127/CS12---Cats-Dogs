@@ -51,4 +51,13 @@ public class PlayerController : MonoBehaviour
             isGrounded = true;
         }
     }
+
+    // Check if the player hit by the lightning
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ligntning"))
+        {
+            Hurt = true;
+        }
+    }
 }
