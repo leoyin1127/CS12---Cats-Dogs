@@ -7,6 +7,17 @@ public class PlayerController : MonoBehaviour
 
     private bool isGrounded = true; // is the player currently on the ground?
 
+    // Set up the screen boundary
+    private float screenLeft;
+    private float screenRight;
+
+    private void Start()
+    {
+        // Get the screen boundaries
+        screenLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, 0)).x;
+        screenRight = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0)).x;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -26,6 +37,10 @@ public class PlayerController : MonoBehaviour
             GetComponent<Rigidbody2D>().AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             isGrounded = false;
         }
+
+        // Check if the player is within the screen boundary
+        float xPos = Mathf.Clamp(transform.position.x, screenLeft, screenRight);
+        transform.position = new Vector3(xPos, transform.position.y);
     }
 
     // Check if the player is on the ground

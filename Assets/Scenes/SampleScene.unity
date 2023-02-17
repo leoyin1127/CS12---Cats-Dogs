@@ -157,6 +157,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   jumpForce: 8
+  xMin: -9.66
+  xMax: 9.54
+  yMin: -4.18
+  yMax: 4.2
 --- !u!212 &411006455
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -217,7 +221,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 411006453}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.6542, y: -1.51, z: 0}
+  m_LocalPosition: {x: 9.33, y: 4.2, z: 0}
   m_LocalScale: {x: 0.1371477, y: 0.15104355, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
