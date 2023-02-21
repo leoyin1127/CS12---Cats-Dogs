@@ -11,12 +11,12 @@ public class catanddog : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             Destroy(gameObject);
-            point += 1;
+            point += 1;            
         }
         if (collision.gameObject.tag == "Floor")
         {
             Destroy(gameObject);
-            point -= 1;
+            point -= 1;            
         }
         Debug.Log(point);
     }
