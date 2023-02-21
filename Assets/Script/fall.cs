@@ -12,23 +12,26 @@ public class fall : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnRandomGameObject());
+        StartCoroutine(SpawnRandomGameObject);
 
     }
 
-    IEnumberator SpawnRandomGameObject()
+    IEnumberator SpawnRandomGameObject
     {
-        yield return new WaitForSeconds(Random.Range(1, 2));
+        get
+        {
+            yield return new WaitForSeconds(Random.Range(1, 2));
 
-        int randomCatanddog = Random.Range(0, 2);
+            int randomCatanddog = Random.Range(0, 2);
 
-        if (Random.value <= .6f)
-            Instantiate(dog1,
-                new Vector2(Random.Range(-xBounds, xBounds), yBound), Quaternion.identity);
-        else
-            Instantiate(cat1,
-                new Vector2(Random.Range(-xBounds, xBounds), yBound), Quaternion.identity);
+            if (Random.value <= .6f)
+                Instantiate(dog1,
+                    new Vector2(Random.Range(-xBounds, xBounds), yBound), Quaternion.identity);
+            else
+                Instantiate(cat1,
+                    new Vector2(Random.Range(-xBounds, xBounds), yBound), Quaternion.identity);
 
-        StartCoroutine(SpawnRandomGameObject());
+            StartCoroutine(SpawnRandomGameObject);
+        }
     }
 }
