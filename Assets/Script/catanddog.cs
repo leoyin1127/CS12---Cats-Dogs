@@ -13,7 +13,7 @@ public class catanddog : MonoBehaviour
             Destroy(gameObject);
             point += 1;            
         }
-        if (collision.gameObject.tag == "Floor")
+        if (collision.gameObject.tag == "Ground")
         {
             Destroy(gameObject);
             point -= 1;            
