@@ -591,6 +591,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   jumpForce: 8
+  heartPrefab: {fileID: 4382218424502473813, guid: bcc79d03f88a54728bb7dca2e3026d1b, type: 3}
+  heartsParent: {fileID: 1414973051}
+  heartsPosition: {x: -8.7446, y: 3.93, z: 0, w: 0}
 --- !u!212 &411006455
 SpriteRenderer:
   m_ObjectHideFlags: 0
