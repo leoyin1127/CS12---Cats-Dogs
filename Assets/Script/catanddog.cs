@@ -8,41 +8,39 @@ public class catanddog : MonoBehaviour
     int point = 0;
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Renderer ren;
+        //Renderer ren;
 
-        void invisible()
-        {
-            ren = GetComponent<Renderer>();
-            ren.enabled = false;
-        }
+        //void invisible()
+        //{
+            //ren = GetComponent<Renderer>();
+            //ren.enabled = false;
+        //}
 
-        void visible()
-        {
-            ren = GetComponent<Renderer>();
-            ren.enabled = true;
-        }
+        //void visible()
+        //{
+            //ren = GetComponent<Renderer>();
+            //ren.enabled = true;
+        //}
 
         if (collision.gameObject.tag == "Enemy")
         {
-            //Destroy(gameObject);
+            Destroy(gameObject);
             //gameObject.SetActive(false);
-            invisible();
+            //invisible();
             point += 1;
             //gameObject.SetActive(true);
-            visible();
+            //visible();
 
         }
         if (collision.gameObject.tag == "Ground")
         {
-            //Destroy(gameObject);
+            Destroy(gameObject);
             //gameObject.SetActive(false);
-            invisible();
+            //invisible();
             point -= 1;
-            visible();
+            //visible();
             //gameObject.SetActive(true);
         }
         Debug.Log(point);
-
-       
     }
 }
