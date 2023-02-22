@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
         // Create heart objects to display player lives
         for (int i = 0; i < lives; i++)
         {
-            Vector4 position = heartsPosition + new Vector4(i * 0.5f, 0f);
+            Vector4 position = heartsPosition + new Vector4(i * 2f, 0f);
             Instantiate(heartPrefab, position, Quaternion.identity, heartsParent);
         }
     }
@@ -66,6 +66,7 @@ public class PlayerController : MonoBehaviour
         {
             lives--;
             Destroy(collision.gameObject);
+            Debug.Log("-1");
             UpdateLives();
         }
     }
@@ -82,8 +83,10 @@ public class PlayerController : MonoBehaviour
         // Create new heart objects to display the updated lives
         for (int i = 0; i < lives; i++)
         {
-            Vector4 position = heartsPosition + new Vector4(i * 0.5f, 0f);
+            Vector4 position = heartsPosition + new Vector4(i * 2f, 0f);
             Instantiate(heartPrefab, position, Quaternion.identity, heartsParent);
+            
+            heartPrefab.GetComponent<SpriteRenderer>().sortingOrder = 11;
         }
 
         // Check if the player has no more lives
