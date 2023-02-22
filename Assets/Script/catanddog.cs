@@ -18,6 +18,6 @@ public class catanddog : MonoBehaviour
             Destroy(gameObject);
             point -= 1;            
         }
-        Debug.Log(point);
+        Debug.Log(point + "bbbbbbbbbbb");
     }
 }
