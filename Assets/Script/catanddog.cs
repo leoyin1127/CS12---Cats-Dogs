@@ -23,33 +23,33 @@ public class catanddog : MonoBehaviour
         }
     }
    
-    int point = 0;
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
+    //int point = 0;
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
         
 
-        if (collision.tag == "Enemy")
-        {
+        //if (collision.CompareTag("Enemy"))
+        //{
             
             //Destroy(gameObject);
             //gameObject.SetActive(false);
             //invisible();
-            point += 1;
+            //point += 1;
             //gameObject.SetActive(true);
             //visible();
 
-        }
-        if (collision.CompareTag("Ground"))
-        {
+        //}
+        //if (collision.CompareTag("Ground"))
+        //{
             //Destroy(gameObject);
             //gameObject.SetActive(false);
             //invisible();
-            point -= 1;
+            //point -= 1;
             //visible();
             //gameObject.SetActive(true);
-        }
-        Debug.Log(point);
-    }
+        //}
+        //Debug.Log(point);
+    //}
    
-}
+//}
 
