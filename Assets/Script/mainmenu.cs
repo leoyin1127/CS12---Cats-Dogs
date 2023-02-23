@@ -10,7 +10,8 @@ public class mainmenu : MonoBehaviour {
     }
     public void QuitGame ()
     {
-        Debug.Log("Quit");
+        string quit = "Quit game!";
+        Debug.Log(quit);
         Application.Quit();
     }
 }

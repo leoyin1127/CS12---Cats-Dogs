@@ -4,27 +4,34 @@ using UnityEngine;
 
 public class catanddog : MonoBehaviour
 {
+    public float fallSpeed = 10.0f;
+    private Vector3 _startingPos;
+    public float FallDistance = 5f;
 
-    int point = 0;
-    private void OnCollisionEnter2D(Collision2D collision)
+    void Start()
     {
-        //Renderer ren;
+        transform.Translate(Vector3.down * fallSpeed * Time.deltaTime, Space.World);
+        _startingPos = transform.position;
+    }
 
-        //void invisible()
-        //{
-            //ren = GetComponent<Renderer>();
-            //ren.enabled = false;
-        //}
-
-        //void visible()
-        //{
-            //ren = GetComponent<Renderer>();
-            //ren.enabled = true;
-        //}
-
-        if (collision.gameObject.tag == "Enemy")
+    void Update()
+    {
+        transform.Translate(Vector3.down * fallSpeed * Time.deltaTime, Space.World);
+        if (transform.position.y > _startingPos.y + FallDistance)
         {
-            Destroy(gameObject);
+            transform.position = _startingPos;
+        }
+    }
+   
+    int point = 0;
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+
+        if (collision.tag == "Enemy")
+        {
+            
+            //Destroy(gameObject);
             //gameObject.SetActive(false);
             //invisible();
             point += 1;
@@ -32,9 +39,9 @@ public class catanddog : MonoBehaviour
             //visible();
 
         }
-        if (collision.gameObject.tag == "Ground")
+        if (collision.CompareTag("Ground"))
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
             //gameObject.SetActive(false);
             //invisible();
             point -= 1;
@@ -43,4 +50,6 @@ public class catanddog : MonoBehaviour
         }
         Debug.Log(point);
     }
+   
 }
+
