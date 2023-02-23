@@ -2,17 +2,26 @@ using UnityEngine;
 
 public class LightningController : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            Debug.Log("aaaaaaaaaaaaaaaa");
+    [SerializeField] private float damage;
 
-            HeartManager heartManager = FindObjectOfType<HeartManager>();
-            if (heartManager != null)
-            {
-                heartManager.LoseHeart();
-            }
+   
+   
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Enemy")
+        {
+            collision.GetComponent<Health>().TakeDamage(damage);
+            Destroy(gameObject);
         }
+
     }
 }
+
+ // private void OnCollisionEnter2D(Collision2D collision)
+    // {
+    //     if (collision.gameObject.CompareTag("Enemy"))
+    //     {
+    //         collision.gameObject.GetComponent<Health>().TakeDamage(damage);
+    //         Destroy(gameObject);
+    //     }
+    // }

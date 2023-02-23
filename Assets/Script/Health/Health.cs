@@ -10,7 +10,6 @@ public class Health : MonoBehaviour
     private void Awake()
     {
         currentHealth = startingHealth;
-        // anim = GetComponent<Animator>();
     }
     public void TakeDamage(float _damage)
     {
@@ -23,6 +22,7 @@ public class Health : MonoBehaviour
         }
         else
         {
+            Application.Quit();
             // if (!dead)
             // {
             //     anim.SetTrigger("die");
@@ -31,13 +31,4 @@ public class Health : MonoBehaviour
             // }
         }
     }
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.E))
-            TakeDamage(1);
-    }
-    // public void AddHealth(float _value)
-    // {
-    //     currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
-    // }
-}
+}    
