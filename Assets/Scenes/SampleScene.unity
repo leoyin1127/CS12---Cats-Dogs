@@ -276,7 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aff4fac1fabe1145b83b50619f5f12d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallSpeed: 8
+  fallSpeed: 6
   FallDistance: 5
 --- !u!1 &52357208
 GameObject:
@@ -430,7 +430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9aff4fac1fabe1145b83b50619f5f12d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallSpeed: 8
+  fallSpeed: 6
   FallDistance: 5
 --- !u!1 &284700180
 GameObject:
