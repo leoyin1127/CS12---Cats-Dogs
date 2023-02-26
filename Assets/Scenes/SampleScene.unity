@@ -278,6 +278,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallSpeed: 8
   FallDistance: 5
+  xBounds: 9.8
+  yBound: 6.5
 --- !u!1 &52357208
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,6 +401,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallSpeed: 6
   FallDistance: 5
+  xBounds: 9.8
+  yBound: 6.5
 --- !u!60 &52357215
 PolygonCollider2D:
   m_ObjectHideFlags: 0

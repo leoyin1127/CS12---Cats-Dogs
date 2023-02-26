@@ -8,6 +8,10 @@ public class catanddog : MonoBehaviour
     private Vector3 _startingPos;
     public float FallDistance = 5f;
 
+    public float xBounds, yBound;
+
+
+
     void Start()
     {
         transform.Translate(Vector3.down * fallSpeed * Time.deltaTime, Space.World);
@@ -22,34 +26,24 @@ public class catanddog : MonoBehaviour
             transform.position = _startingPos;
         }
     }
-   
+
     //int point = 0;
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-        
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
 
-        //if (collision.CompareTag("Enemy"))
-        //{
-            
-            //Destroy(gameObject);
-            //gameObject.SetActive(false);
-            //invisible();
-            //point += 1;
-            //gameObject.SetActive(true);
-            //visible();
 
-        //}
-        //if (collision.CompareTag("Ground"))
-        //{
-            //Destroy(gameObject);
-            //gameObject.SetActive(false);
-            //invisible();
-            //point -= 1;
-            //visible();
-            //gameObject.SetActive(true);
-        //}
-        //Debug.Log(point);
-    //}
+        if (collision.CompareTag("Enemy"))
+        {
+            transform.position = new Vector2(Random.Range(-xBounds, xBounds), yBound);
+            transform.Translate(Vector3.down * fallSpeed * Time.deltaTime, Space.World);
+            if (transform.position.y > _startingPos.y + FallDistance)
+            {
+                transform.position = _startingPos;
+            }
+
+        }
+    }
+       
    
 }
 
