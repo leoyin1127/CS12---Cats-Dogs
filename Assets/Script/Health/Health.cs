@@ -1,3 +1,4 @@
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Health : MonoBehaviour
@@ -19,10 +20,10 @@ public class Health : MonoBehaviour
         {
             // anim.SetTrigger("hurt");
             //iframes
-        }
+        }   
         else
         {
-            Application.Quit();
+            SceneManager.LoadScene("End");
             // if (!dead)
             // {
             //     anim.SetTrigger("die");
