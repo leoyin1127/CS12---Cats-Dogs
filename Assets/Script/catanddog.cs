@@ -36,8 +36,6 @@ public class catanddog : MonoBehaviour
         {
             transform.position = new Vector2(Random.Range(-xBounds, xBounds), yBound);     
             transform.Translate(Vector3.down * fallspeed * Time.deltaTime);
-            
-
         }
     }   
    
