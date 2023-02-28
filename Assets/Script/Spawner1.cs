@@ -24,7 +24,7 @@ public class Spawner1 : MonoBehaviour
         if (randomNumber <= 5) //if the random number is equal to or smaller than 5, cat will be cloned, or else, dog
             Instantiate(cat,
                 new Vector2(Random.Range(-xBounds, xBounds), yBound), Quaternion.identity);
-        else 
+        else
             Instantiate(dog,
                 new Vector2(Random.Range(-xBounds, xBounds), yBound), Quaternion.identity);
 
